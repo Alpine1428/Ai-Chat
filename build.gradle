@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version '1.7-SNAPSHOT'
+    id 'fabric-loom' version '1.7.4'
     id 'java'
 }
 
@@ -29,18 +29,9 @@ processResources {
 }
 
 tasks.withType(JavaCompile).configureEach {
-    it.options.encoding = "UTF-8"
     it.options.release = 17
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
     withSourcesJar()
-}
-
-jar {
-    from("LICENSE") {
-        rename { "${it}_${base.archivesName.get()}" }
-    }
 }
