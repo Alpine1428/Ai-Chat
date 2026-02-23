@@ -14,10 +14,12 @@ public class ChatHudMixin {
     @Inject(method = "addMessage(Lnet/minecraft/text/Text;)V", at = @At("HEAD"))
     private void onAddMessage(Text message, CallbackInfo ci) {
         try {
-            String text = message.getString();
+            String fullMessage = message.getString();
+
             if (HolyWorldAIClient.chatMonitor != null) {
-                HolyWorldAIClient.chatMonitor.onChatMessage(text);
+                HolyWorldAIClient.chatMonitor.onChatMessage(fullMessage);
             }
+
         } catch (Exception e) {
             HolyWorldAIClient.LOGGER.error("Chat mixin error", e);
         }
