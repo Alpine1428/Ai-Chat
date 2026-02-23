@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "holyworldai",
+  "version": "${version}",
+  "name": "HolyWorld AI Assistant",
+  "description": "AI assistant for HolyWorld moderators",
+  "authors": ["Alpine1428"],
+  "contact": {},
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.alpine.holyworldai.HolyWorldAIClient"
+    ]
+  },
+  "mixins": [
+    "holyworldai.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.15.0",
+    "minecraft": "~1.20.1",
+    "java": ">=17",
+    "fabric-api": "*"
+  }
+}
